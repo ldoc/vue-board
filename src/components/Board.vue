@@ -1,12 +1,20 @@
 <template>
   <svg>
-    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="central">Hi from svg board</text>
+    <Tile v-for="item in tiles" :i="item.i" :j="item.j" :color="item.color" :key="`${item.i}-${item.j}`"/>
   </svg>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import Tile from './Tile.vue'
 export default {
-  name: 'Board'
+  name: 'Board',
+  computed: {
+    ...mapState({
+      tiles: state => state.board.tiles
+    })
+  },
+  components: {Tile}
 }
 </script>
 
