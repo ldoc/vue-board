@@ -1,9 +1,11 @@
 // Tiles store module
 
+const DIM_ROWS = 24;
+const DIM_COLS = 23;
+const TILE_SIZE = 50;
+
 const initialMatrix = () => {
   const colors = ['#FFF8DC','#FFEBCD','#DEB887','#BC8F8F','#FFF8DC','#B8860B','#D2691E','#A0522D','#A52A2A','#800000',]
-  const DIM_ROWS = 4;
-  const DIM_COLS = 3;
   let m = [];
 
   for(let i=0 ; i<DIM_ROWS ; i++){
@@ -17,6 +19,9 @@ const initialMatrix = () => {
 
 export default {
   state: {
+    rows: DIM_ROWS,
+    cols: DIM_COLS,
+    tileSize: TILE_SIZE,
     tiles: initialMatrix()
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Board/>
+    <Board :w="w" :h="h"/>
   </div>
 </template>
 
@@ -9,9 +9,22 @@ import Board from './components/Board.vue'
 
 export default {
   name: 'app',
+  data: function(){
+    return {
+      w: document.body.offsetWidth,
+      h: document.body.offsetHeight
+    }
+  },
   components: {
     Board
+  },
+  mounted: function(){
+    document.body.onresize = (e) => {
+      this.w = document.body.offsetWidth;
+      this.h = document.body.offsetHeight;
+    };
   }
+
 }
 </script>
 
@@ -26,5 +39,6 @@ html {
 #app {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 </style>
