@@ -1,7 +1,7 @@
 // Tiles store module
 
-const DIM_ROWS = 24;
-const DIM_COLS = 23;
+const DIM_ROWS = 20;
+const DIM_COLS = 20;
 const TILE_SIZE = 50;
 
 const initialMatrix = () => {
@@ -11,7 +11,7 @@ const initialMatrix = () => {
   for(let i=0 ; i<DIM_ROWS ; i++){
     for(let j=0 ; j<DIM_COLS ; j++){
       const rndColor = colors[Math.floor(Math.random() * 10)];
-      m[(i * (DIM_ROWS -1))+ j] = {i, j, color:rndColor};
+      m[(i * DIM_COLS)+ j] = {i, j, color:rndColor};
     }
   }
   return m;

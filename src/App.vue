@@ -19,7 +19,7 @@ export default {
     Board
   },
   mounted: function(){
-    document.body.onresize = (e) => {
+    document.body.onresize = () => {
       this.w = document.body.offsetWidth;
       this.h = document.body.offsetHeight;
     };
